@@ -37,7 +37,8 @@ Unicorn Tears
 ** What would you like to order? **
 ***********************************
 
-        """
+
+"""
 )
 
 welcoming_message()
