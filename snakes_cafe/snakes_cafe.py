@@ -1,6 +1,3 @@
-from ast import Pass, While
-
-
 def welcoming_message():
     print(
         """
@@ -41,27 +38,21 @@ Unicorn Tears
 ***********************************
 
         """
-        
-    )
+)
 
 welcoming_message()
 
 
 menu_items = ['Wings','Cookies','Spring Rolls','Salmon','Steak','Meat Tornado','A Literal Garden','Ice Cream','Cake','Pie','Coffee','Tea','Unicorn Tears']
-how_many_items = 0
-ordered_items =[]
-
+# ordered_items =[]
+# how_many_items = Counter(ordered_items)
+how_many_items = {item:0 for item in menu_items}
 while True:
     user_order = input("> ")
-    ordered_items.append(user_order)
 
-
-    if user_order in menu_items and user_order not in ordered_items:
-        print(f'** 1 order of {user_order} have been added to your meal **')
-        
-    elif user_order in menu_items and user_order in ordered_items:
-        how_many_items += 1
-        print(f'** {how_many_items} order of {user_order} have been added to your meal **')
+    if user_order in menu_items:
+        how_many_items[user_order] +=1
+        print(f'** {how_many_items[user_order]} order of {user_order} have been added to your meal **')
     
     elif user_order == 'quit':
         break
@@ -74,9 +65,9 @@ while True:
                 if choice == 'Yes' or choice == 'yes':
                     user_order = input('> ')
                     if user_order in menu_items:
-                        ordered_items.append(user_order)
-                        how_many_items +=1
-                        print(f'** {how_many_items} order of {user_order} have been added to your meal **')
+                        # occurance = how_many_items[user_order]
+                        how_many_items[user_order] +=1
+                        print(f'** {how_many_items[user_order]} order of {user_order} have been added to your meal **')
 
                 elif choice == 'No' or choice == 'no':
                     break
@@ -84,7 +75,7 @@ while True:
 
 
 # prinitng out a summary of the orders
-print('summary of complete order',ordered_items)
+print('summary of complete order',how_many_items)
     
 
 
