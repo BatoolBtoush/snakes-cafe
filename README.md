@@ -1,1 +1,1 @@
-Open PR link: https://github.com/BatoolBtoush/snakes-cafe/pull/2
+> The PR link: https://github.com/BatoolBtoush/snakes-cafe/pull/2
